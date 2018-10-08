@@ -15,11 +15,13 @@ namespace Library
                 Title = "a",
                 Author = "a",
                 ISBN = "a",
+                IsAvailable = true
             };
             Book book2 = new Book(){
                 Title = "b",
                 Author = "b",
                 ISBN = "b",
+                IsAvailable = true
             };
             List<Book> books = new List<Book>(){
                 book1, book2
@@ -37,18 +39,23 @@ namespace Library
             Book endersGame = new Book() {
                 Title = "Ender's Game",
                 Author = "Orsen Scott",
-                ISBN = "ABC123"
+                ISBN = "ABC123",
+                IsAvailable = true
             };
             Book lotr = new Book() {
                 Title = "Lord of the Rings",
                 Author = "J R R Tolkein",
-                ISBN = "ABC125"
+                ISBN = "ABC125",
+                IsAvailable = true
+
             };
             // Alternate way to make a book object
             Book tomSawyer = new Book();
                 tomSawyer.Title = "Ender's Game";
                 tomSawyer.Author = "Orsen Scott";
                 tomSawyer.ISBN = "ABC124";
+                tomSawyer.IsAvailable = true;
+
             // or this way, but you don't get to hold the books in a variable name.
             // NewLibrary.AddToInventory(new Book() {Title = "Something", Author = "Some Dude", ISBN = "A0adf934"});
             // NewLibrary.AddToInventory(new Book() {Title = "Something Else", Author = "Some Other Dude ", ISBN = "sadgfsdgf34"});

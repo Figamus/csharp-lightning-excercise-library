@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Library
@@ -25,6 +26,29 @@ namespace Library
             _bookList.Add(book);
             // or use 'this' to look within this specific class
             // this._bookList.Add(book);
+        }
+        public void CheckOut (string isbn, CardHolder cardHolder)
+        {
+            foreach (Book book in _bookList)
+            {
+                if (book.ISBN == isbn && book.IsAvailable)
+                {
+                    cardHolder.CheckoutBook(book);
+                    book.IsAvailable = false;
+                }
+            }
+            
+        }
+        public bool IsAvailable(string isbn)
+        {
+            foreach (Book book in _bookList)
+            {
+                if (book.ISBN == isbn)
+                {
+                    return book.IsAvailable;
+                }
+            }
+            return false;
         }
     }
 }
